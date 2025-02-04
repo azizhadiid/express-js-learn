@@ -1,5 +1,6 @@
 import express from "express";
 import url from "url";
+import { parseArgs } from "util";
 
 const app = express();
 const port = 3000;
@@ -22,6 +23,12 @@ app.get("/about", (req, res) => {
 
 app.get("/contact", (req, res) => {
     res.sendFile("./pages/contact.html", {root: __dirname});
+});
+
+app.get("/barang/:id", (req, res) => {
+    // console.log(req.params);
+    const id = req.params.id;
+    res.send("Ini adalah halaman barang " + id);
 });
 
 app.use("*", (req, res) => {
