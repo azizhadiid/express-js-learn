@@ -1,6 +1,6 @@
 import express from "express";
 import url from "url";
-import { parseArgs } from "util";
+// import { parseArgs } from "util";
 import router from "./routes/index.js";
 
 const app = express();
@@ -26,11 +26,11 @@ app.get("/contact", (req, res) => {
     res.sendFile("./pages/contact.html", {root: __dirname});
 });
 
-app.get("/barang/:id", (req, res) => {
-    // console.log(req.params);
-    const id = req.params.id;
-    res.send("Ini adalah halaman barang " + id);
-});
+// app.get("/barang/:id", (req, res) => {
+//     // console.log(req.params);
+//     const id = req.params.id;
+//     res.send("Ini adalah halaman barang " + id);
+// });
 
 // app.get("/barangs", (req, res) => {
 //   res.send("Ini metode get barang");
@@ -52,9 +52,9 @@ app.get("/barang/:id", (req, res) => {
 //   res.send("Ini metode all barang");
 // });
 
-// app.get("/random.text", (req, res) => {
-//   res.send("Ini metode random text");
-// });
+app.get("/random.text", (req, res) => {
+  res.send("Ini metode random text");
+});
 
 // app.get("/ab?cd", (req, res) => {
 //   res.send("Ini metode get untuk ad?cd");
