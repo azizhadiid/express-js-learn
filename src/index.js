@@ -13,6 +13,8 @@ app.engine("html", ejs.renderFile);
 app.set("view engine", "ejs");
 app.use(expressEjsLayouts);
 
+app.use("/static", express.static(path.join(__dirname, "../public")));
+
 app.use(router);
 
 app.listen(port, () => {
